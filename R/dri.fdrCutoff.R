@@ -1,4 +1,4 @@
-`dri.fdrCutoff` <-
+dri.fdrCutoff <-
 function(observed, null, targetFDR, bt=TRUE) {
 	n_genes <- length(observed)
 	

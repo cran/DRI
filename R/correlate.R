@@ -1,4 +1,4 @@
-`correlate` <-
+correlate <-
 function(dna, rna) {
 	n_genes = dim(dna)[1]
 	correlation_obs <- vector(mode="numeric", length=n_genes)

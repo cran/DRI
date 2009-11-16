@@ -1,4 +1,4 @@
-`get.pi0` <-
+get.pi0 <-
 function(sorted_observed, sorted_null) {
 	N <- length(sorted_observed) # number of genes in dataset
 	

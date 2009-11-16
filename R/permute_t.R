@@ -1,4 +1,4 @@
-`permute_t` <-
+permute_t <-
 function(DNA.data, RNA.data, sample_ids, tail_p, k) {
 	n_genes <- dim(DNA.data)[1]
 	n_samples <- dim(DNA.data)[2]

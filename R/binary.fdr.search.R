@@ -1,4 +1,4 @@
-`binary.fdr.search` <-
+binary.fdr.search <-
 function(n, n.left, n.right, targetFDR, sorted_test, sorted_null, pi0) {
 	cutoff <- sorted_test[n]
 	cutoff.plus1 <- sorted_test[n+1]

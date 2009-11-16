@@ -1,4 +1,4 @@
-`fdr.fast` <-
+fdr.fast <-
 function(cutoff, n_genes, sorted_null, pi0=1) {	
 	# Calculate FPs - only looks at genes more extreme than cutoff
 	fp <- apply(sorted_null, MARGIN=2, FUN=sum.fp, cutoff=cutoff)

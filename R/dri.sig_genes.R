@@ -1,4 +1,4 @@
-`dri.sig_genes` <-
+dri.sig_genes <-
 function(cutoff, observed, null_dist, gene_id, gene_name, chr, nuc, bt=TRUE, method="drcorrelate") {
 	if(method == "drsam") {
 		observed.dna <- observed$test.dna
@@ -90,7 +90,7 @@ function(cutoff, observed, null_dist, gene_id, gene_name, chr, nuc, bt=TRUE, met
 			genes.n <- cbind(rank.n, row_number.n, id.n, name.n, chr.n, nuc.n, correlation.n, fdr_i.n)	
 		}
 
-		Results.SigGenes <- list(positive=genes.p, negative=genes.n, cutoff=C)
+		Results.SigGenes <- list(positive=genes.p, negative=genes.n, cutoff=cutoff)
 
 	} else { # only looking at + correlations
 		obs.o <- order(observed, decreasing = TRUE)
@@ -113,7 +113,7 @@ function(cutoff, observed, null_dist, gene_id, gene_name, chr, nuc, bt=TRUE, met
 		nuc.p <- nuc[row_number.p]
 
 		genes.p <- cbind(rank.p, row_number.p, id.p, name.p, chr.p, nuc.p, correlation.p, fdr_i.p)	
-		Results.SigGenes <- list(positive=genes.p, cutoff=C)
+		Results.SigGenes <- list(positive=genes.p, cutoff=cutoff)
 	}
 
 	return(Results.SigGenes)	

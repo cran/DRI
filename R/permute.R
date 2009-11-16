@@ -1,4 +1,4 @@
-`permute` <-
+permute <-
 function(dna, rna, sample_ids, k=50) {
 	n_genes <- dim(dna)[1]
 	n_samples <- dim(dna)[2]

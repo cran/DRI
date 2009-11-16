@@ -1,4 +1,4 @@
-`varr` <-
+varr <-
 function(x, meanx) {
 	n = ncol(x)
 	#p = nrow(x)

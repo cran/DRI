@@ -1,33 +1,31 @@
-\name{dri.impute}
-\alias{dri.impute}
+\name{dri.smooth.cghdata}
+\alias{dri.smooth.cghdata}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{ Impute missing values for gene expression data}
+\title{Smooth DNA copy number data over a specific window size}
 \description{
-  Missing gene expression measurements are imputed by the K-nearest neighbors method
+ A moving average is calculated by chromosomal location of copy number probes using a specified
+ window size.
 }
 \usage{
-dri.impute(d)
+dri.smooth.cghdata(DNA.data, Chr, mw = 5)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{d}{ data matrix whose missing values will be imputed }
+  \item{DNA.data}{ matrix of DNA copy number data (rows ordered by genome position}
+  \item{Chr}{ vector of chromosomes on which copy number probes are located (ordered by probes' genome position }
+  \item{mw}{ window size to take moving average over}
 }
 \details{
-The K-nearest neighbors method is employed (K=10) to impute missing gene expression values. For any row
-with more than 50% missing data, the values are imputed using the overall mean per sample.
-
-Uses the \code{impute.knn} function of the \code{impute} package.
+This function performs one pre-processing method for smoothing copy number data before performing 
+further DNA/RNA integrative analyses. To help eliminate missing values, and reduce noise, for each 
+sample a moving average is taken over a user-specified window size along each chromosome.
 }
 \value{
-  \item{data}{ the new imputed data matrix }
+  \item{DNA.smoothed}{ matrix of DNA copy number data smoothed by a moving average window}
 }
 \references{
 Salari, K., Tibshirani, R., and Pollack, J.R. (2009) DR-Integrator: a new analytic tool for integrating 
 DNA copy number and gene expression data. http://pollacklab.stanford.edu/
-
-Olga Troyanskaya, Michael Cantor, Gavin Sherlock, Pat Brown, Trevor Hastie, Robert Tibshirani,
-David Botstein and Russ B. Altman, Missing value estimation methods for DNA microarrays
-BIOINFORMATICS Vol. 17 no. 6, 2001 Pages 520-525.
 }
 \author{ Keyan Salari, Robert Tibshirani, and Jonathan R. Pollack }
 \note{
@@ -39,12 +37,10 @@ BIOINFORMATICS Vol. 17 no. 6, 2001 Pages 520-525.
 \code{\link{runFusedLasso}}
 }
 \examples{
-require(impute)
 data(mySampleData)
 attach(mySampleData)
 
-# Impute missing values for gene expression data
-RNA.data <- dri.impute(RNA.data)
+DRI.DNA.processed <- dri.smooth.cghdata(DNA.data, Chr, 5)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

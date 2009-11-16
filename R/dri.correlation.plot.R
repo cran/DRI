@@ -1,4 +1,4 @@
-`dri.correlation.plot` <-
+dri.correlation.plot <-
 function(observed, Results.SigGenes, sig_cutoff, chr, nuc_pos, bothtails) {
 	
 	# find boundaries between chrms to draw lines between them

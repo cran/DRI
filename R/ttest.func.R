@@ -1,4 +1,4 @@
-`ttest.func` <-
+ttest.func <-
 function(x,y,s0=0, s=NULL){
 	n1 <- sum(y==1)
 	n2 <- sum(y==2)

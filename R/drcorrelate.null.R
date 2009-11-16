@@ -1,4 +1,4 @@
-`drcorrelate.null` <-
+drcorrelate.null <-
 function(DNA, RNA, method="pearson", tail_p=10, perm) {
 	DNA.data <-as.matrix(DNA)
 	RNA.data <- as.matrix(RNA)	

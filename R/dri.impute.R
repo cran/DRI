@@ -1,4 +1,4 @@
-`dri.impute` <-
+dri.impute <-
 function(d) {
 	return(impute.knn(d)$data)
 }

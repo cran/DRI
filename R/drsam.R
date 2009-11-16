@@ -1,4 +1,4 @@
-`drsam` <-
+drsam <-
 function(DNA.data, RNA.data, labels, transform.type, for.null=FALSE) {
 	summed.statistic <- vector()
 	

@@ -41,15 +41,17 @@ DNA copy number and gene expression data. http://pollacklab.stanford.edu/
 \note{
 }
 \seealso{
-\code{\link{drcorrelate}},\code{\link{drcorrelate.null}},\code{\link{drsam}},
-\code{\link{drsam.null}},\code{\link{dri.fdrCutoff}},\code{\link{dri.sig_genes}},\code{\link{dri.heatmap}}
+\code{\link{drcorrelate}}, \code{\link{drcorrelate.null}}, \code{\link{drsam}}, 
+\code{\link{drsam.null}}, \code{\link{dri.fdrCutoff}}, \code{\link{dri.sig_genes}}, 
+\code{\link{dri.heatmap}}, \code{\link{dri.merge.CNbyRNA}}, \code{\link{dri.smooth.cghdata}}, 
+\code{\link{runFusedLasso}}
 }
 \examples{
 require(impute)
 data(mySampleData)
 attach(mySampleData)
 
-# DNA data should contain no missing values - pre-mooth beforehand
+# DNA data should contain no missing values - pre-smooth beforehand
 # Impute missing values for gene expression data
 RNA.data <- dri.impute(RNA.data)
 
@@ -60,8 +62,10 @@ null <- drcorrelate.null(DNA.data, RNA.data, method="pearson", perm=10)
 # identify the correlation cutoff corresponding to your desired FDR
 n.cutoff <- dri.fdrCutoff(obs, null, targetFDR=0.05, bt=TRUE)
 cutoff <- n.cutoff[2]
-# retrieve all genes that are significant at the determined cutoff, and calculate gene-specific FDRs
-Results <- dri.sig_genes(cutoff, obs, null, GeneIDs, GeneNames, Chr, Nuc, bt=TRUE, method="drcorrelate") 
+# retrieve all genes that are significant at the determined cutoff, and
+# calculate gene-specific FDRs
+Results <- dri.sig_genes(cutoff, obs, null, GeneIDs, GeneNames, Chr, Nuc, 
+bt=TRUE, method="drcorrelate") 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

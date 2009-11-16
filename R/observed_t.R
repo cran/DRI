@@ -1,4 +1,4 @@
-`observed_t` <-
+observed_t <-
 function(DNA.data, RNA.data, tail_p) {
 
 	n_genes <- dim(DNA.data)[1]

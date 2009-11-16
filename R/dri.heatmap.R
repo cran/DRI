@@ -1,4 +1,4 @@
-`dri.heatmap` <-
+dri.heatmap <-
 function(Results.SigGenes, DNA, RNA, SampleIDs, GeneNames, Chr, Nuc, statistic, color.scheme) {
 	# statistic = c("pearson", "spearman", "ttest")
 	# color.scheme = c("RG", "RB", "YB")

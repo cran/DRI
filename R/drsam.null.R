@@ -1,4 +1,4 @@
-`drsam.null` <-
+drsam.null <-
 function(DNA.data, RNA.data, labels, transform.type, k) {
 	n_genes <- dim(DNA.data)[1]
 	n_samples <- dim(DNA.data)[2]
